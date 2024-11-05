@@ -17,13 +17,15 @@ function createBoxes(amount) {
     return;
   }
   boxes.innerHTML = "";
+  const BoxArr = [];
   for (let i = 0; i < input.value; i++) {
     const item = document.createElement("div");
     item.style.backgroundColor = getRandomHexColor();
     item.style.width = `${30 + i * 10}px`;
     item.style.height = `${30 + i * 10}px`;
-    boxes.append(item);
+    BoxArr.push(item);
   }
+  boxes.append(...BoxArr);
   input.value = "";
   return;
 }
